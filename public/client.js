@@ -34,8 +34,10 @@ canvas.addEventListener('mousedown', () => mouse.down = true);
 canvas.addEventListener('mouseup', () => mouse.down = false);
 
 function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth || 800;
+  canvas.height = window.innerHeight || 600;
+  canvas.style.width = canvas.width + 'px';
+  canvas.style.height = canvas.height + 'px';
 }
 window.addEventListener('resize', resize);
 resize();
